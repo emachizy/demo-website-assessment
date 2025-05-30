@@ -1,0 +1,9 @@
+{
+  "images": [
+    {
+      "id": "1",
+      "src": "./assets/hero-img.jpg",
+      "alt": "Hero Image"
+    }
+  ]
+}

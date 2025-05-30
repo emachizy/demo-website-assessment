@@ -1,20 +1,39 @@
-import React from "react";
-import images from "../assets/images.json";
+import { useState, useEffect } from "react";
+import LazyImage from "./LazyImage"; // Adjust path as needed
 
 const Hero = () => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Fetched JSON:", data);
+        setImages(data.images || []);
+      })
+      .catch((error) => console.error("Error fetching JSON:", error));
+  }, []);
+
   return (
     <header className="text-white py-10 px-4 md:px-16">
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Image Section */}
-        <div className="flex-1 flex justify-center">
-          {images.map((img) => (
-            <img
-              key={img.id}
-              src={img.src}
-              alt={img.alt}
-              className="w-64 h-64 object-cover rounded-full shadow-lg"
-            />
-          ))}
+        <div className="flex-1 flex justify-center ">
+          {images.length > 0 &&
+            images.map((img) => (
+              <div
+                className="p-6 bg-gray-400 rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                key={img.id}
+              >
+                <LazyImage
+                  //   key={img.id}
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-64 h-64"
+                  placeholderClassName="w-64 h-64"
+                />
+              </div>
+            ))}
         </div>
         {/* Text Section */}
         <div className="flex-1 space-y-4">

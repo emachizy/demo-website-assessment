@@ -14,7 +14,7 @@ const Navbar = () => {
             Emmanuel
           </Link>
         </div>
-        <div className="flex space-x-20 text-sm sm:text-base">
+        <div className="hidden md:flex space-x-20 text-sm sm:text-base">
           <NavLink
             to="/about"
             className={({ isActive }) =>
