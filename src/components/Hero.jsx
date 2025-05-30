@@ -22,14 +22,14 @@ const Hero = () => {
           {images.length > 0 &&
             images.map((img) => (
               <div
-                className="p-6 bg-gray-400 rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="p-6 bg-gray-400 rounded-full shadow-lg hover:shadow-neutral-50 transition-shadow duration-300"
                 key={img.id}
               >
                 <LazyImage
                   //   key={img.id}
                   src={img.src}
                   alt={img.alt}
-                  className="w-64 h-64"
+                  className="w-64 h-64 shadow-2xl"
                   placeholderClassName="w-64 h-64"
                 />
               </div>
@@ -47,7 +47,7 @@ const Hero = () => {
             also have experience with back-end technologies.
           </p>
           <div className="flex gap-4 pt-4 justify-center">
-            <button className="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition">
+            <button className="bg-white text-black px-6 py-2 rounded-full font-medium transition border-4 border-blue-700 hover:bg-blue-700 hover:text-white">
               Download CV
             </button>
             <button className="border border-white px-6 py-2 rounded-full font-medium hover:bg-white hover:text-black transition">
