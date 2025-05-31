@@ -11,7 +11,7 @@ const Testimonial = () => {
             <div className="border border-blue-600 w-10 rounded-full"></div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map(({ id, name, feedback, image, company }) => (
             <div
               key={id}
